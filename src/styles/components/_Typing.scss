@@ -1,0 +1,11 @@
+.typing-effect::after {
+    content: "▋";
+    margin-left: 1px;
+    animation: blink 1s steps(5, start) infinite;
+    transition: all .2s ease;
+}
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}

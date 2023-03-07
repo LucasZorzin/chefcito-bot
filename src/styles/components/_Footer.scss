@@ -1,0 +1,22 @@
+footer{
+    min-height: 3vh;
+    width: 100vw;
+    padding: 1.8vh 0;
+    background-color: #06d4f9;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    span{
+        display: block;
+
+        a{
+            width: initial;
+            display: initial;
+            color: white;
+            transition: all .2s ease;
+        }
+        a:hover{
+            color: rgb(0, 133, 195);
+        }
+    }
+}

@@ -1,0 +1,347 @@
+/* Header */
+header {
+    background-color: #f9f9f9;
+}
+.banner {
+    img {
+        height: 90px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.generate {
+    text-align: start;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-right: 20px;
+    .generate__span {
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .generate__span:hover {
+        color: #1d8ecd;
+    }
+}
+.menu {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    cursor: pointer;
+    svg {
+        transform: scaleX(-1);
+        position: absolute;
+        height: 40px;
+        right: 3px;
+        top: 2px;
+    }
+}
+
+.menu--chatPath {
+    top: 13px;
+}
+
+// NAV
+#navbar {
+    position: fixed;
+    display: initial !important;
+    transform: translate(100%, 0);
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    width: 80vw;
+    transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    background-color: white;
+    height: 100vh;
+    box-shadow: 0 16px 20px 2px rgba(0, 0, 0, 0.192);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+    padding-left: 30px;
+    position: relative;
+    top: 15vw;
+    li {
+        margin: 10px 0;
+        text-transform: uppercase;
+        transition: 0.2s all ease-in;
+        a {
+            font-size: 15px;
+            color: black;
+            transition: 0.2s all ease-in;
+        }
+    }
+    li a:hover {
+        color: #545454;
+    }
+}
+
+.close-btn-nav {
+    width: 17px;
+    position: absolute;
+    right: 16px;
+    top: 22px;
+    cursor: pointer;
+}
+
+.zoom-in {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation-name: navbarIn !important;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.zoom-out {
+    animation-name: navbarOut !important;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes navbarIn {
+    0% {
+        transform: translate(100%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+@keyframes navbarOut {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 0);
+    }
+}
+
+.desktop-initial {
+    display: none;
+}
+
+.nav-logo {
+    z-index: 10;
+    filter: invert(1);
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    a img {
+        width: 110px;
+        filter: opacity(0.2);
+    }
+}
+
+.profile-img--checkout {
+    pointer-events: initial;
+}
+
+//! //////////////////////////////////////////////////// TABLET //////////////////////////////////////////////////// !//
+@media (min-width: 768px) {
+    #navbar {
+        opacity: 0;
+        visibility: hidden;
+        width: 40vw;
+        top: 20px;
+        right: 20px;
+        height: 300px;
+        transform: none;
+    }
+    .nav {
+        padding-left: 40px;
+        top: 5vw;
+    }
+    @keyframes navbarIn {
+        0% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: -700px;
+        }
+        100% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: 20px;
+        }
+    }
+    @keyframes navbarOut {
+        0% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: 20px;
+        }
+        70% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: -500px;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+            top: 20px;
+            right: -700px;
+        }
+    }
+}
+
+//! //////////////////////////////////////////////////// PC //////////////////////////////////////////////////// !//
+@media (min-width: 992px) {
+    .generate {
+        text-align: start;
+        margin-top: 10px;
+        margin-left: 20px;
+        .generate__span {
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .generate__span:hover {
+            color: #1d8ecd;
+        }
+    }
+    header {
+        height: 710px;
+    }
+    .header {
+        height: initial !important;
+    }
+    .banner {
+        img {
+            height: 250px;
+        }
+    }
+    .desktop-initial {
+        display: initial;
+    }
+    .menu {
+        right: 20px;
+        top: 20px;
+        z-index: 2;
+        svg {
+            position: initial;
+            margin-left: 10px;
+            height: 50px;
+        }
+        span {
+            color: white;
+            margin-left: 10px;
+            font-size: 15px;
+            text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.432);
+        }
+    }
+    .menu--chatPath {
+        top: 5%;
+    }
+    .nav-logo {
+        bottom: 10px;
+        left: 5px;
+        a img {
+            width: 150px;
+        }
+    }
+    .shop-profile {
+        align-items: flex-start;
+        margin-left: 70px;
+        transform: translate(0, -92px);
+        .shop-profile-container {
+            width: 430px;
+            height: 510px;
+            .profile-img {
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                padding: 0 30px;
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+            span {
+                font-size: 15px;
+                margin-top: 15px;
+            }
+        }
+    }
+    .social-btn-container {
+        width: 100%;
+        .social-btn a {
+            margin: 5px;
+            font-size: 13px;
+        }
+    }
+    #navbar {
+        opacity: 0;
+        visibility: hidden;
+        width: 20vw;
+        top: 20px;
+        right: 20px;
+        height: 300px;
+        transform: none;
+    }
+    .nav {
+        padding-left: 40px;
+        top: 5vw;
+    }
+    @keyframes navbarIn {
+        0% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: -700px;
+        }
+        100% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: 20px;
+        }
+    }
+    @keyframes navbarOut {
+        0% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: 20px;
+        }
+        70% {
+            opacity: 1;
+            visibility: initial;
+            top: 20px;
+            right: -500px;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+            top: 20px;
+            right: -700px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    #navbar {
+        height: 330px;
+    }
+    .generate {
+        span {
+            font-size: 14px;
+        }
+    }
+}
